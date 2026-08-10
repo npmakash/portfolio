@@ -1,3 +1,9 @@
+const getAssetUrl = (path) => {
+  const base = import.meta.env.BASE_URL || '/';
+  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+  return `${base}${cleanPath}`;
+};
+
 export const personalDetails = {
   name: "Akash Kumar",
   title: "B.Tech Computer Science Student & Full Stack Developer",
@@ -23,7 +29,7 @@ export const personalDetails = {
     linkedinUser: "@npmakash",
     location: "India"
   },
-  avatar: "/assets/avatar.png"
+  avatar: getAssetUrl('assets/avatar.png')
 };
 
 export const skillsData = [
@@ -95,7 +101,7 @@ export const projectsData = [
     title: "Bulk Google Slide Generator",
     category: "Automation & Python",
     featured: true,
-    image: "/assets/project_slides.png",
+    image: getAssetUrl('assets/project_slides.png'),
     shortDescription: "Automated batch presentation generator tool that creates custom Google Slides directly from structured input data.",
     fullDescription: "A productivity tool engineered using Python and API integrations to automate the creation of Google Slides presentations in bulk. Eliminates manual presentation design repetitive tasks by dynamically injecting datasets, tables, and images into slide templates.",
     techStack: ["Python", "Google Slides API", "Automation", "Data Pipelines", "JSON"],
@@ -113,7 +119,7 @@ export const projectsData = [
     title: "Mock Test Web App",
     category: "MERN Stack",
     featured: true,
-    image: "/assets/project_mocktest.png",
+    image: getAssetUrl('assets/project_mocktest.png'),
     shortDescription: "Interactive online examination platform with timed quiz modules, instant score analytics, and progress tracking.",
     fullDescription: "A comprehensive e-learning and testing web application designed for students to take timed practice exams. Includes real-time countdown timers, interactive question navigation, subject-wise score analytics, and review modes.",
     techStack: ["React", "Node.js", "Express", "JavaScript", "CSS3", "REST API"],
@@ -131,7 +137,7 @@ export const projectsData = [
     title: "PDF Study - Online Drawing & Annotation App",
     category: "Frontend Web Application",
     featured: true,
-    image: "/assets/project_pdfstudy.png",
+    image: getAssetUrl('assets/project_pdfstudy.png'),
     shortDescription: "Feature-rich web app for viewing, drawing, highlighting, and annotating PDF documents online directly in the browser.",
     fullDescription: "An online interactive PDF workspace built for students and researchers. Enables users to render PDF files in the browser, draw freehand diagrams, highlight key textbook lines, insert sticky notes, and save annotated study guides.",
     techStack: ["JavaScript", "React", "HTML5 Canvas", "PDF Rendering Engine", "Modern CSS"],
