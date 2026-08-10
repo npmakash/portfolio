@@ -1,0 +1,183 @@
+export const personalDetails = {
+  name: "Akash Kumar",
+  title: "B.Tech Computer Science Student & Full Stack Developer",
+  bio: "Passionate Computer Science student with a strong foundation in Full Stack Engineering, Algorithms, and Machine Learning. Experienced in building scalable web applications with MERN Stack, Python automation, and RESTful microservices.",
+  taglines: [
+    "MERN Stack Specialist",
+    "Machine Learning & Python Enthusiast",
+    "B.Tech CS Undergrad @ AKTU",
+    "Full Stack & Systems Developer"
+  ],
+  education: {
+    degree: "Bachelor of Technology in Computer Science & Engineering",
+    university: "Dr. A.P.J. Abdul Kalam Technical University (AKTU)",
+    grade: "Grade 7+",
+    location: "India",
+    origin: "Indian"
+  },
+  contact: {
+    email: "akashkumar60907@gmail.com",
+    github: "https://github.com/npmakash",
+    githubUser: "@npmakash",
+    linkedin: "https://linkedin.com/in/npmakash",
+    linkedinUser: "@npmakash",
+    location: "India"
+  },
+  avatar: "/assets/avatar.png"
+};
+
+export const skillsData = [
+  {
+    category: "Full Stack & Web",
+    skills: [
+      { name: "React", level: 90, icon: "React", desc: "Hooks, Context API, Redux Toolkit, Component Architecture" },
+      { name: "Node.js", level: 85, icon: "Server", desc: "Express.js, REST APIs, Middleware, NPM ecosystem" },
+      { name: "JavaScript", level: 92, icon: "Code2", desc: "ES6+, Async/Await, Closures, Functional Programming" },
+      { name: "MERN Stack", level: 88, icon: "Layers", desc: "End-to-end full stack app development & deployment" },
+      { name: "FastAPI", level: 80, icon: "Zap", desc: "High-performance Python APIs, Pydantic, Swagger documentation" }
+    ]
+  },
+  {
+    category: "Core Languages & Systems",
+    skills: [
+      { name: "Python", level: 88, icon: "FileCode", desc: "Scripting, Automation, ML concepts, Data structures" },
+      { name: "C++", level: 85, icon: "Terminal", desc: "Standard Template Library (STL), Memory management, DSA" },
+      { name: "DSA", level: 84, icon: "Cpu", desc: "Data Structures & Algorithms, Problem Solving, Optimization" },
+      { name: "OOP", level: 90, icon: "Box", desc: "Inheritance, Polymorphism, Abstraction, Design Patterns" }
+    ]
+  },
+  {
+    category: "Databases & Tools",
+    skills: [
+      { name: "Database & Data Mining", level: 82, icon: "Database", desc: "SQL/NoSQL databases, Data querying, Mining fundamentals" },
+      { name: "Git & GitHub", level: 88, icon: "GitBranch", desc: "Version control, Branching strategies, PRs, Open source" },
+      { name: "Linux", level: 80, icon: "TerminalSquare", desc: "Command line, Shell scripting, System basics (Alison Certified)" }
+    ]
+  }
+];
+
+export const experienceData = [
+  {
+    id: "infosys-springboard",
+    role: "Embedded IoT Intern",
+    company: "Infosys Springboard",
+    type: "4-Week Internship",
+    period: "Internship Program",
+    badge: "IoT & Hardware Interfacing",
+    description: "Completed an intensive 4-week Embedded IoT internship program focused on smart sensor integration, hardware-software communications, and internet-of-things architecture.",
+    highlights: [
+      "Worked with microcontroller logic, sensor data ingestion, and embedded programming fundamentals.",
+      "Gained hands-on experience in IoT protocols and edge-to-cloud data transmission pipelines.",
+      "Collaborated with mentors to simulate real-world IoT smart ecosystem scenarios."
+    ],
+    skillsUsed: ["Embedded Systems", "IoT Protocols", "Hardware Interfacing", "C++", "Sensors"]
+  },
+  {
+    id: "code-alpha",
+    role: "Full Stack Developer Intern",
+    company: "Code Alpha",
+    type: "Internship",
+    period: "Virtual Internship",
+    badge: "MERN Stack Development",
+    description: "Built and deployed interactive full-stack web applications using the MERN stack (MongoDB, Express, React, Node.js) with responsive UI/UX and RESTful backend APIs.",
+    highlights: [
+      "Architected clean, modular React frontend interfaces with modern state management.",
+      "Developed backend REST API endpoints for user authentication and data processing.",
+      "Optimized frontend bundle size, load speeds, and cross-browser accessibility."
+    ],
+    skillsUsed: ["React", "Node.js", "Express", "JavaScript", "REST APIs", "CSS3"]
+  }
+];
+
+export const projectsData = [
+  {
+    id: "bulk-slide-generator",
+    title: "Bulk Google Slide Generator",
+    category: "Automation & Python",
+    featured: true,
+    image: "/assets/project_slides.png",
+    shortDescription: "Automated batch presentation generator tool that creates custom Google Slides directly from structured input data.",
+    fullDescription: "A productivity tool engineered using Python and API integrations to automate the creation of Google Slides presentations in bulk. Eliminates manual presentation design repetitive tasks by dynamically injecting datasets, tables, and images into slide templates.",
+    techStack: ["Python", "Google Slides API", "Automation", "Data Pipelines", "JSON"],
+    liveDemo: "#",
+    github: "https://github.com/npmakash",
+    keyFeatures: [
+      "Automated template mapping for instant presentation generation.",
+      "Supports CSV and JSON payload data sources.",
+      "Custom layout formatting and text replacement engines.",
+      "Significantly reduces manual slide preparation time."
+    ]
+  },
+  {
+    id: "mock-test-app",
+    title: "Mock Test Web App",
+    category: "MERN Stack",
+    featured: true,
+    image: "/assets/project_mocktest.png",
+    shortDescription: "Interactive online examination platform with timed quiz modules, instant score analytics, and progress tracking.",
+    fullDescription: "A comprehensive e-learning and testing web application designed for students to take timed practice exams. Includes real-time countdown timers, interactive question navigation, subject-wise score analytics, and review modes.",
+    techStack: ["React", "Node.js", "Express", "JavaScript", "CSS3", "REST API"],
+    liveDemo: "#",
+    github: "https://github.com/npmakash",
+    keyFeatures: [
+      "Dynamic test engine with multiple choice questions (MCQs).",
+      "Countdown timer with auto-submission upon time expiry.",
+      "Detailed score breakdown charts and performance analytics.",
+      "Question flagging, review panel, and category filters."
+    ]
+  },
+  {
+    id: "pdf-study",
+    title: "PDF Study - Online Drawing & Annotation App",
+    category: "Frontend Web Application",
+    featured: true,
+    image: "/assets/project_pdfstudy.png",
+    shortDescription: "Feature-rich web app for viewing, drawing, highlighting, and annotating PDF documents online directly in the browser.",
+    fullDescription: "An online interactive PDF workspace built for students and researchers. Enables users to render PDF files in the browser, draw freehand diagrams, highlight key textbook lines, insert sticky notes, and save annotated study guides.",
+    techStack: ["JavaScript", "React", "HTML5 Canvas", "PDF Rendering Engine", "Modern CSS"],
+    liveDemo: "#",
+    github: "https://github.com/npmakash",
+    keyFeatures: [
+      "Seamless online PDF rendering with page thumbnail navigation.",
+      "Freehand drawing tools (pen, highlighter, eraser, line thickness).",
+      "Sticky note insertions and color-coded text annotations.",
+      "Client-side canvas rendering for ultra-fast, smooth performance."
+    ]
+  }
+];
+
+export const certificationsData = [
+  {
+    id: "linux-alison",
+    title: "Linux For Beginner",
+    issuer: "Alison",
+    icon: "Terminal",
+    date: "Certified",
+    badge: "Alison Verified",
+    color: "#22c55e",
+    description: "Certification covering fundamental Linux system operations, shell commands, file hierarchy, permission management, and system administration basics.",
+    skillsVerified: ["Linux Kernel Basics", "Bash Commands", "File System Hierarchy", "Permissions & Security"]
+  },
+  {
+    id: "ml-udemy",
+    title: "Machine Learning With Python",
+    issuer: "Udemy",
+    icon: "BrainCircuit",
+    date: "Certified",
+    badge: "Udemy Certified",
+    color: "#8b5cf6",
+    description: "Comprehensive training on supervised and unsupervised machine learning algorithms, model training, feature engineering, and predictive analytics using Python.",
+    skillsVerified: ["Python ML Libraries", "Supervised Learning", "Regression & Classification", "Model Evaluation"]
+  },
+  {
+    id: "db-mining-alison",
+    title: "Database and Data Mining Certification",
+    issuer: "Alison",
+    icon: "Database",
+    date: "Certified",
+    badge: "Alison Verified",
+    color: "#3b82f6",
+    description: "In-depth certification covering relational database principles, SQL querying, data warehousing concepts, and data mining pattern extraction.",
+    skillsVerified: ["Relational Databases", "SQL Optimization", "Data Warehousing", "Pattern Extraction"]
+  }
+];
