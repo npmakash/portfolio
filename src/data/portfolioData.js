@@ -2,6 +2,8 @@ import avatarImg from '../assets/images/avatar.png';
 import slidesImg from '../assets/images/project_slides.png';
 import mocktestImg from '../assets/images/project_mocktest.png';
 import pdfstudyImg from '../assets/images/project_pdfstudy.png';
+import rajrasoiImg from '../assets/images/project_rajrasoi.png';
+import badesahabImg from '../assets/images/project_badesahab.png';
 
 export const personalDetails = {
   name: "Akash Kumar",
@@ -26,6 +28,8 @@ export const personalDetails = {
     githubUser: "@npmakash",
     linkedin: "https://linkedin.com/in/npmakash",
     linkedinUser: "@npmakash",
+    fiverr: "https://www.fiverr.com/sellers/theakashkumarr/",
+    fiverrUser: "@theakashkumarr",
     location: "India"
   },
   avatar: avatarImg
@@ -91,6 +95,45 @@ export const experienceData = [
       "Optimized frontend bundle size, load speeds, and cross-browser accessibility."
     ],
     skillsUsed: ["React", "Node.js", "Express", "JavaScript", "REST APIs", "CSS3"]
+  }
+];
+
+export const freelanceProjectsData = [
+  {
+    id: "raj-rasoi",
+    title: "Raj Rasoi - Royal Fine Dining & Lounge",
+    category: "Freelance Restaurant Web App",
+    featured: true,
+    image: rajrasoiImg,
+    shortDescription: "Functional website for a fine dining restaurant & heritage Indian lounge with menu showcases and reservation UI.",
+    fullDescription: "A luxury client web application built for Raj Rasoi Royal Fine Dining & Family Lounge. Features an elegant heritage aesthetic, interactive multi-course menu sections, table booking contact UI, and seamless mobile responsiveness.",
+    techStack: ["React", "JavaScript", "Modern CSS3", "Responsive UI", "UI/UX"],
+    liveDemo: "https://npmakash.github.io/raj-rasoi/",
+    github: "https://npmakash.github.io/raj-rasoi/",
+    keyFeatures: [
+      "Royal heritage aesthetic with smooth scroll animations.",
+      "Interactive food & beverage menu catalog.",
+      "Table & family lounge booking reservation UI.",
+      "Full cross-browser and mobile viewport optimization."
+    ]
+  },
+  {
+    id: "bade-sahab",
+    title: "Bade Sahab Ka Family Dhaba",
+    category: "Freelance Web App",
+    featured: true,
+    image: badesahabImg,
+    shortDescription: "Restaurant & dhaba website with one-click direct 'Order on WhatsApp' feature integration.",
+    fullDescription: "A client freelance web application built for Bade Sahab Ka Family Dhaba. Designed for fast food ordering by incorporating a direct 'Order on WhatsApp' feature that pre-formats customer food orders directly into WhatsApp messages.",
+    techStack: ["React", "JavaScript", "WhatsApp API Integration", "CSS3", "Mobile UI"],
+    liveDemo: "https://npmakash.github.io/bade-sahab/",
+    github: "https://npmakash.github.io/bade-sahab/",
+    keyFeatures: [
+      "One-click 'Order on WhatsApp' feature for instant customer orders.",
+      "Interactive food menu with price & category filters.",
+      "Direct phone & map location contact integration.",
+      "Optimized for fast mobile loading and instant ordering."
+    ]
   }
 ];
 

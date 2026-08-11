@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Mail, ArrowRight, Terminal, Sparkles, CheckCircle2, Download } from 'lucide-react';
-import { GithubIcon, LinkedinIcon } from './SocialIcons';
+import { Mail, ArrowRight, Terminal, Sparkles, CheckCircle2, Download, Briefcase } from 'lucide-react';
+import { GithubIcon, LinkedinIcon, FiverrIcon } from './SocialIcons';
 import { personalDetails } from '../data/portfolioData';
 
 export default function Hero({ onOpenTerminal }) {
@@ -90,7 +90,7 @@ export default function Hero({ onOpenTerminal }) {
                   boxShadow: '0 0 10px var(--accent-emerald)'
                 }}
               />
-              Available for Software Engineering Roles & Internships
+              Available for Software Engineering Roles & Freelance Web Projects
             </div>
 
             <h1
@@ -129,20 +129,26 @@ export default function Hero({ onOpenTerminal }) {
                 maxWidth: '600px'
               }}
             >
-              Computer Science Undergrad at <strong>{personalDetails.education.university}</strong> (Grade {personalDetails.education.grade}). Crafting full-stack web platforms, Python automation scripts, and exploring machine learning algorithms.
+              Computer Science Undergrad at <strong>{personalDetails.education.university}</strong> (Grade {personalDetails.education.grade}). Crafting full-stack web platforms, custom freelance client websites, and automated systems.
             </p>
 
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', marginBottom: '2.5rem' }}>
               <a href="#contact" className="btn btn-primary">
                 Download CV <Download size={18} />
               </a>
+              <a
+                href={personalDetails.contact.fiverr}
+                target="_blank"
+                rel="noreferrer"
+                className="btn btn-secondary"
+                style={{ borderColor: '#1dbf73', color: '#1dbf73' }}
+              >
+                <FiverrIcon size={18} /> Hire on Fiverr
+              </a>
               <button onClick={onOpenTerminal} className="btn btn-secondary">
                 <Terminal size={18} style={{ color: 'var(--accent-primary)' }} />
                 Open Interactive CLI
               </button>
-              <a href="#projects" className="btn btn-outline">
-                Explore Projects
-              </a>
             </div>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
@@ -186,6 +192,25 @@ export default function Hero({ onOpenTerminal }) {
               >
                 <LinkedinIcon size={20} />
                 <span>LinkedIn {personalDetails.contact.linkedinUser}</span>
+              </a>
+
+              <a
+                href={personalDetails.contact.fiverr}
+                target="_blank"
+                rel="noreferrer"
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  color: '#1dbf73',
+                  textDecoration: 'none',
+                  fontSize: '0.92rem',
+                  fontWeight: 600,
+                  transition: 'opacity 0.2s ease'
+                }}
+              >
+                <FiverrIcon size={20} />
+                <span>Fiverr Seller</span>
               </a>
 
               <a

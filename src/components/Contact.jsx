@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, Copy, Check, Send, MessageSquare } from 'lucide-react';
-import { GithubIcon, LinkedinIcon } from './SocialIcons';
+import { GithubIcon, LinkedinIcon, FiverrIcon } from './SocialIcons';
 import { personalDetails } from '../data/portfolioData';
 
 export default function Contact({ showToast }) {
@@ -41,7 +41,7 @@ export default function Contact({ showToast }) {
             Let's Build Something <span className="text-gradient">Together</span>
           </h2>
           <p className="section-subtitle">
-            Whether you have a job opportunity, project inquiry, or just want to connect, feel free to drop a message!
+            Whether you have a job opportunity, freelance inquiry, or just want to connect, feel free to drop a message!
           </p>
         </div>
 
@@ -86,7 +86,31 @@ export default function Contact({ showToast }) {
             </div>
 
             <div className="glass-card" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              <h3 style={{ fontSize: '1.1rem', fontWeight: 700 }}>Social Handles</h3>
+              <h3 style={{ fontSize: '1.1rem', fontWeight: 700 }}>Social & Freelance Profiles</h3>
+              <a
+                href={personalDetails.contact.fiverr}
+                target="_blank"
+                rel="noreferrer"
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.75rem',
+                  padding: '0.85rem',
+                  borderRadius: '0.6rem',
+                  background: 'var(--bg-tertiary)',
+                  border: '1px solid #1dbf73',
+                  textDecoration: 'none',
+                  color: 'var(--text-primary)',
+                  fontWeight: 600
+                }}
+              >
+                <FiverrIcon size={20} style={{ color: '#1dbf73' }} />
+                <div style={{ flex: 1 }}>
+                  <div>Fiverr Seller Profile</div>
+                  <span style={{ fontSize: '0.8rem', color: '#1dbf73' }}>{personalDetails.contact.fiverrUser} (Hire Me)</span>
+                </div>
+              </a>
+
               <a
                 href={personalDetails.contact.github}
                 target="_blank"
@@ -195,7 +219,7 @@ export default function Contact({ showToast }) {
                   type="text"
                   value={formData.subject}
                   onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                  placeholder="Opportunity Inquiry / Project Collaboration"
+                  placeholder="Freelance Web Order / Project Collaboration"
                   style={{
                     width: '100%',
                     padding: '0.75rem 1rem',

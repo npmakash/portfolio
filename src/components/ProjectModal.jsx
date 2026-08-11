@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, CheckCircle, Code } from 'lucide-react';
+import { X, CheckCircle, Code, ExternalLink } from 'lucide-react';
 import { GithubIcon } from './SocialIcons';
 
 export default function ProjectModal({ project, onClose }) {
@@ -134,9 +134,16 @@ export default function ProjectModal({ project, onClose }) {
           </div>
 
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <a href={project.github} target="_blank" rel="noreferrer" className="btn btn-secondary">
-              <GithubIcon size={18} /> View Source Code
-            </a>
+            {project.liveDemo && project.liveDemo !== '#' && (
+              <a href={project.liveDemo} target="_blank" rel="noreferrer" className="btn btn-primary">
+                View Live Website <ExternalLink size={18} />
+              </a>
+            )}
+            {project.github && project.github !== '#' && (
+              <a href={project.github} target="_blank" rel="noreferrer" className="btn btn-secondary">
+                <GithubIcon size={18} /> View Repository
+              </a>
+            )}
           </div>
         </div>
       </div>

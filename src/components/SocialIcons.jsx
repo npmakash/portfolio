@@ -40,3 +40,19 @@ export function LinkedinIcon({ size = 20, style = {}, className = '' }) {
     </svg>
   );
 }
+
+export function FiverrIcon({ size = 20, style = {}, className = '' }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      style={style}
+      className={className}
+    >
+      <path d="M23 16.5a.5.5 0 0 1-.5.5h-2.1l-1.9-5.1V16.5a.5.5 0 0 1-.5.5h-1.5a.5.5 0 0 1-.5-.5V8.5a.5.5 0 0 1 .5-.5h2.1l1.9 5.1V8.5a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 .5.5v8zM12.5 8h-1.6a.5.5 0 0 0-.5.5v1.2H8.8V8.5a.5.5 0 0 0-.5-.5H6.7a.5.5 0 0 0-.5.5v1.2H5a.5.5 0 0 0-.5.5v1.3a.5.5 0 0 0 .5.5h1.2v4.5a.5.5 0 0 0 .5.5h1.6a.5.5 0 0 0 .5-.5v-4.5h1.6a.5.5 0 0 0 .5-.5v-1.3a.5.5 0 0 0-.5-.5h-1.6V9.7h1.7a.5.5 0 0 0 .5-.5V8.5a.5.5 0 0 0-.5-.5zM1 16.5a.5.5 0 0 0 .5.5h1.6a.5.5 0 0 0 .5-.5V8.5a.5.5 0 0 0-.5-.5H1.5a.5.5 0 0 0-.5.5v8z"/>
+      <circle cx="2.3" cy="5.2" r="1.3" />
+    </svg>
+  );
+}
