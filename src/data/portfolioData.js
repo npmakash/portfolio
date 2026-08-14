@@ -141,19 +141,19 @@ export const projectsData = [
   {
     id: "bulk-slide-generator",
     title: "Bulk Google Slide Generator",
-    category: "Automation & Python",
+    category: "Node JS & React",
     featured: true,
     image: slidesImg,
-    shortDescription: "Automated batch presentation generator tool that creates custom Google Slides directly from structured input data.",
-    fullDescription: "A productivity tool engineered using Python and API integrations to automate the creation of Google Slides presentations in bulk. Eliminates manual presentation design repetitive tasks by dynamically injecting datasets, tables, and images into slide templates.",
-    techStack: ["Python", "Google Slides API", "Automation", "Data Pipelines", "JSON"],
-    liveDemo: "#",
-    github: "https://github.com/npmakash",
+    shortDescription: "AI-powered bulk Google Slides presentation generator web application built with Node.js and React.",
+    fullDescription: "Slide Wave AI is a web application engineered using Node.js, React, and Google Slides API to automate the batch creation of custom Google Slides presentations. Eliminates manual presentation design repetitive tasks by dynamically injecting datasets, tables, and AI content into slide templates.",
+    techStack: ["Node.js", "React", "Google Slides API", "Express", "REST API"],
+    liveDemo: "https://slide-wave-ai.onrender.com/",
+    github: "https://github.com/npmakash/Slide-Wave-AI",
     keyFeatures: [
       "Automated template mapping for instant presentation generation.",
       "Supports CSV and JSON payload data sources.",
       "Custom layout formatting and text replacement engines.",
-      "Significantly reduces manual slide preparation time."
+      "Deployed on Render cloud with full Google Slides API integration."
     ]
   },
   {
