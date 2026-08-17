@@ -9,6 +9,7 @@ import tandoorchowkImg from '../assets/images/project_tandoorchowk.png';
 export const personalDetails = {
   name: "Akash Kumar",
   title: "B.Tech Computer Science Student & Full Stack Developer",
+  resume: "https://drive.google.com/uc?export=download&id=1oSgv1q291AZ0UyW4mWjWs17e5dVaPOnV",
   bio: "Passionate Computer Science student with a strong foundation in Full Stack Engineering, Algorithms, and Machine Learning. Experienced in building scalable web applications with MERN Stack, Python automation, and RESTful microservices.",
   taglines: [
     "MERN Stack Specialist",
@@ -31,6 +32,7 @@ export const personalDetails = {
     linkedinUser: "@npmakash",
     fiverr: "https://www.fiverr.com/sellers/theakashkumarr/",
     fiverrUser: "@theakashkumarr",
+    resume: "https://drive.google.com/uc?export=download&id=1oSgv1q291AZ0UyW4mWjWs17e5dVaPOnV",
     location: "India"
   },
   avatar: avatarImg

@@ -137,7 +137,12 @@ export default function Hero({ onOpenTerminal }) {
             </p>
 
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', marginBottom: '2.5rem' }}>
-              <a href="#contact" className="btn btn-primary">
+              <a
+                href={personalDetails.resume}
+                target="_blank"
+                rel="noreferrer"
+                className="btn btn-primary"
+              >
                 Download CV <Download size={18} />
               </a>
               <a
