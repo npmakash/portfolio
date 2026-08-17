@@ -1,0 +1,5 @@
+# robots.txt for npmakash portfolio (https://npmakash.github.io/portfolio/)
+User-agent: *
+Allow: /
+
+Sitemap: https://npmakash.github.io/portfolio/sitemap.xml

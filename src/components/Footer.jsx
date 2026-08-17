@@ -89,7 +89,7 @@ export default function Footer() {
             color: 'var(--text-muted)'
           }}
         >
-          © {new Date().getFullYear()} {personalDetails.name}. Built with React, Vite & Modern CSS.
+          © {new Date().getFullYear()} <strong>npmakash portfolio</strong> — {personalDetails.name} (@npmakash). All rights reserved. Built with React, Vite & Modern CSS.
         </div>
       </div>
     </footer>

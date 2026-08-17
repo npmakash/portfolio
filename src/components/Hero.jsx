@@ -66,43 +66,47 @@ export default function Hero({ onOpenTerminal }) {
           className="hero-grid"
         >
           <div>
-            <div
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.6rem',
-                padding: '0.4rem 1rem',
-                borderRadius: '9999px',
-                background: 'rgba(16, 185, 129, 0.1)',
-                border: '1px solid rgba(16, 185, 129, 0.25)',
-                color: 'var(--accent-emerald)',
-                fontSize: '0.88rem',
-                fontWeight: 600,
-                marginBottom: '1.5rem'
-              }}
-            >
-              <span
-                style={{
-                  width: '8px',
-                  height: '8px',
-                  borderRadius: '50%',
-                  background: 'var(--accent-emerald)',
-                  boxShadow: '0 0 10px var(--accent-emerald)'
-                }}
-              />
-              Available for Software Engineering Roles & Freelance Web Projects
-            </div>
+              <span className="section-tag" style={{ marginBottom: '1.25rem' }}>
+                <Sparkles size={14} /> Official npmakash Portfolio
+              </span>
 
-            <h1
-              style={{
-                fontSize: 'clamp(2.5rem, 5vw, 3.8rem)',
-                fontWeight: 800,
-                lineHeight: 1.1,
-                marginBottom: '1rem'
-              }}
-            >
-              Hi, I'm <span className="text-gradient">{personalDetails.name}</span>
-            </h1>
+              <div
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.6rem',
+                  padding: '0.4rem 1rem',
+                  borderRadius: '9999px',
+                  background: 'rgba(16, 185, 129, 0.1)',
+                  border: '1px solid rgba(16, 185, 129, 0.25)',
+                  color: 'var(--accent-emerald)',
+                  fontSize: '0.88rem',
+                  fontWeight: 600,
+                  marginBottom: '1.5rem'
+                }}
+              >
+                <span
+                  style={{
+                    width: '8px',
+                    height: '8px',
+                    borderRadius: '50%',
+                    background: 'var(--accent-emerald)',
+                    boxShadow: '0 0 10px var(--accent-emerald)'
+                  }}
+                />
+                Available for Software Engineering Roles & Freelance Web Projects
+              </div>
+
+              <h1
+                style={{
+                  fontSize: 'clamp(2.5rem, 5vw, 3.8rem)',
+                  fontWeight: 800,
+                  lineHeight: 1.1,
+                  marginBottom: '1rem'
+                }}
+              >
+                Hi, I'm <span className="text-gradient">{personalDetails.name}</span> <span style={{ fontSize: '1.5rem', opacity: 0.8, color: 'var(--accent-secondary)' }}>(@npmakash)</span>
+              </h1>
 
             <div
               style={{
@@ -257,7 +261,7 @@ export default function Hero({ onOpenTerminal }) {
               >
                 <img
                   src={personalDetails.avatar}
-                  alt={personalDetails.name}
+                  alt="Akash Kumar - npmakash portfolio full stack developer profile picture"
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
               </div>
