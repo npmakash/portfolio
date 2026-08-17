@@ -4,6 +4,7 @@ import mocktestImg from '../assets/images/project_mocktest.png';
 import pdfstudyImg from '../assets/images/project_pdfstudy.png';
 import rajrasoiImg from '../assets/images/project_rajrasoi.png';
 import badesahabImg from '../assets/images/project_badesahab.png';
+import tandoorchowkImg from '../assets/images/project_tandoorchowk.png';
 
 export const personalDetails = {
   name: "Akash Kumar",
@@ -133,6 +134,24 @@ export const freelanceProjectsData = [
       "Interactive food menu with price & category filters.",
       "Direct phone & map location contact integration.",
       "Optimized for fast mobile loading and instant ordering."
+    ]
+  },
+  {
+    id: "tandoor-chowk",
+    title: "Tandoor Chowk - Authentic Kulhad Chai & Snacks",
+    category: "Freelance Web App",
+    featured: true,
+    image: tandoorchowkImg,
+    shortDescription: "Authentic Kulhad Chai & Tandoori snacks web application with interactive menu and WhatsApp ordering.",
+    fullDescription: "A client freelance web application built for Tandoor Chowk in Chandauli, UP. Highlights authentic earthen Kulhad Chai and tandoori delicacies with interactive menu showcases, location information, and direct WhatsApp ordering integration.",
+    techStack: ["React", "JavaScript", "WhatsApp API Integration", "CSS3", "Responsive UI"],
+    liveDemo: "https://npmakash.github.io/tandoor-chowk/",
+    github: "https://github.com/npmakash/tandoor-chowk",
+    keyFeatures: [
+      "Authentic earthen Kulhad Chai & tandoori snacks showcase.",
+      "One-click 'Order on WhatsApp' direct customer ordering integration.",
+      "Interactive food menu with price & category breakdown.",
+      "Mobile-first responsive design optimized for fast access."
     ]
   }
 ];

@@ -1,8 +1,140 @@
-import React, { useState } from 'react';
-import { FolderGit2, ArrowRight, ExternalLink, Briefcase } from 'lucide-react';
+import React, { useState, useRef, useEffect } from 'react';
+import { FolderGit2, ArrowRight, ExternalLink, Briefcase, ChevronLeft, ChevronRight } from 'lucide-react';
 import { GithubIcon, FiverrIcon } from './SocialIcons';
 import { projectsData, freelanceProjectsData, personalDetails } from '../data/portfolioData';
 import ProjectModal from './ProjectModal';
+
+function ProjectSlider({ projects, renderCard }) {
+  const sliderRef = useRef(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const updateScrollState = () => {
+    if (!sliderRef.current) return;
+    const { scrollLeft, scrollWidth, clientWidth } = sliderRef.current;
+    setCanScrollLeft(scrollLeft > 10);
+    setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
+
+    const cardWidth = clientWidth > 768 ? clientWidth / 2 : clientWidth;
+    const index = Math.round(scrollLeft / cardWidth);
+    setActiveIndex(Math.min(Math.max(index, 0), projects.length - 1));
+  };
+
+  useEffect(() => {
+    updateScrollState();
+    window.addEventListener('resize', updateScrollState);
+    return () => window.removeEventListener('resize', updateScrollState);
+  }, [projects]);
+
+  const scroll = (direction) => {
+    if (!sliderRef.current) return;
+    const container = sliderRef.current;
+    const scrollAmount = container.clientWidth > 768 ? container.clientWidth / 2 + 12 : container.clientWidth;
+    const targetScroll = direction === 'next' 
+      ? container.scrollLeft + scrollAmount 
+      : container.scrollLeft - scrollAmount;
+
+    container.scrollTo({
+      left: targetScroll,
+      behavior: 'smooth'
+    });
+  };
+
+  const scrollToIndex = (index) => {
+    if (!sliderRef.current) return;
+    const container = sliderRef.current;
+    const cardWidth = container.clientWidth > 768 ? container.clientWidth / 2 + 12 : container.clientWidth;
+    container.scrollTo({
+      left: index * cardWidth,
+      behavior: 'smooth'
+    });
+  };
+
+  return (
+    <div style={{ position: 'relative' }}>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+          {projects.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => scrollToIndex(idx)}
+              aria-label={`Go to slide ${idx + 1}`}
+              style={{
+                width: activeIndex === idx ? '24px' : '8px',
+                height: '8px',
+                borderRadius: '9999px',
+                background: activeIndex === idx ? 'var(--accent-primary)' : 'rgba(255, 255, 255, 0.2)',
+                border: 'none',
+                cursor: 'pointer',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+              }}
+            />
+          ))}
+        </div>
+
+        <div style={{ display: 'flex', gap: '0.5rem' }}>
+          <button
+            onClick={() => scroll('prev')}
+            disabled={!canScrollLeft}
+            aria-label="Previous Project"
+            className="slider-nav-btn"
+            style={{
+              width: '38px',
+              height: '38px',
+              borderRadius: '50%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              background: canScrollLeft ? 'var(--bg-tertiary)' : 'rgba(255, 255, 255, 0.04)',
+              color: canScrollLeft ? 'var(--text-primary)' : 'var(--text-muted)',
+              border: '1px solid var(--border-color)',
+              cursor: canScrollLeft ? 'pointer' : 'not-allowed',
+              opacity: canScrollLeft ? 1 : 0.4,
+              transition: 'all 0.2s ease'
+            }}
+          >
+            <ChevronLeft size={20} />
+          </button>
+          <button
+            onClick={() => scroll('next')}
+            disabled={!canScrollRight}
+            aria-label="Next Project"
+            className="slider-nav-btn"
+            style={{
+              width: '38px',
+              height: '38px',
+              borderRadius: '50%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              background: canScrollRight ? 'var(--bg-tertiary)' : 'rgba(255, 255, 255, 0.04)',
+              color: canScrollRight ? 'var(--text-primary)' : 'var(--text-muted)',
+              border: '1px solid var(--border-color)',
+              cursor: canScrollRight ? 'pointer' : 'not-allowed',
+              opacity: canScrollRight ? 1 : 0.4,
+              transition: 'all 0.2s ease'
+            }}
+          >
+            <ChevronRight size={20} />
+          </button>
+        </div>
+      </div>
+
+      <div
+        ref={sliderRef}
+        onScroll={updateScrollState}
+        className="project-slider-track"
+      >
+        {projects.map((project) => (
+          <div key={project.id} className="project-slide-item">
+            {renderCard(project)}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -16,7 +148,8 @@ export default function Projects() {
         overflow: 'hidden',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        height: '100%'
       }}
     >
       <div>
@@ -165,7 +298,7 @@ export default function Projects() {
               justifyContent: 'space-between',
               flexWrap: 'wrap',
               gap: '1rem',
-              marginBottom: '1.75rem',
+              marginBottom: '1.25rem',
               paddingBottom: '0.75rem',
               borderBottom: '1px solid var(--border-color)'
             }}
@@ -198,9 +331,10 @@ export default function Projects() {
             </a>
           </div>
 
-          <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '2rem' }}>
-            {freelanceProjectsData.map(renderProjectCard)}
-          </div>
+          <ProjectSlider
+            projects={freelanceProjectsData}
+            renderCard={renderProjectCard}
+          />
         </div>
 
         {/* Subsection 2: Personal & Software Projects */}
@@ -210,7 +344,7 @@ export default function Projects() {
               display: 'flex',
               alignItems: 'center',
               gap: '0.75rem',
-              marginBottom: '1.75rem',
+              marginBottom: '1.25rem',
               paddingBottom: '0.75rem',
               borderBottom: '1px solid var(--border-color)'
             }}
@@ -224,9 +358,10 @@ export default function Projects() {
             </div>
           </div>
 
-          <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem' }}>
-            {projectsData.map(renderProjectCard)}
-          </div>
+          <ProjectSlider
+            projects={projectsData}
+            renderCard={renderProjectCard}
+          />
         </div>
       </div>
 
@@ -235,10 +370,55 @@ export default function Projects() {
       )}
 
       <style>{`
+        .project-slider-track {
+          display: flex;
+          gap: 1.5rem;
+          overflow-x: auto;
+          scroll-snap-type: x mandatory;
+          scroll-behavior: smooth;
+          padding: 0.5rem 0.25rem 1.5rem 0.25rem;
+          scrollbar-width: thin;
+          scrollbar-color: var(--accent-primary) transparent;
+        }
+
+        .project-slider-track::-webkit-scrollbar {
+          height: 6px;
+        }
+
+        .project-slider-track::-webkit-scrollbar-track {
+          background: rgba(255, 255, 255, 0.05);
+          border-radius: 9999px;
+        }
+
+        .project-slider-track::-webkit-scrollbar-thumb {
+          background: var(--accent-primary);
+          border-radius: 9999px;
+        }
+
+        .project-slide-item {
+          flex: 0 0 calc(50% - 0.75rem);
+          min-width: 320px;
+          scroll-snap-align: start;
+        }
+
+        .slider-nav-btn:hover:not(:disabled) {
+          border-color: var(--accent-primary) !important;
+          color: var(--accent-primary) !important;
+          transform: scale(1.05);
+        }
+
         .glass-card:hover .project-img-hover {
           transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+          .project-slide-item {
+            flex: 0 0 100%;
+            min-width: 100%;
+          }
         }
       `}</style>
     </section>
   );
 }
+
