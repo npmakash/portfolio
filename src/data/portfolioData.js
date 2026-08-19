@@ -32,7 +32,7 @@ export const personalDetails = {
     linkedinUser: "@npmakash",
     fiverr: "https://www.fiverr.com/sellers/theakashkumarr/",
     fiverrUser: "@theakashkumarr",
-    resume: "https://drive.google.com/uc?export=download&id=1oSgv1q291AZ0UyW4mWjWs17e5dVaPOnV",
+    resume: "https://drive.google.com/file/d/1fL8-PuBjqvVaGdMlLTG9YE0pcpSwfO3m/view?usp=sharing",
     location: "India"
   },
   avatar: avatarImg
